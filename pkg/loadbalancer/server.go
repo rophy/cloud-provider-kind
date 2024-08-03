@@ -218,8 +218,6 @@ func (s *Server) createLoadBalancer(clusterName string, service *v1.Service, ima
 		"--privileged",
 		"--restart=on-failure",                      // to deal with the crash casued by https://github.com/envoyproxy/envoy/issues/34195
 		"--sysctl=net.ipv4.ip_forward=1",            // allow ip forwarding
-		"--sysctl=net.ipv6.conf.all.disable_ipv6=0", // enable IPv6
-		"--sysctl=net.ipv6.conf.all.forwarding=1",   // allow ipv6 forwarding
 		"--sysctl=net.ipv4.conf.all.rp_filter=0",    // disable rp filter
 	}
 
